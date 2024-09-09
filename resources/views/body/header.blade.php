@@ -18,12 +18,16 @@
                                 <i class="fe-maximize noti-icon"></i>
                             </a>
                         </li>
-    
+                        @php
+                       $id=Auth::user()->id;
+                       $adminData= App\Models\User::find($id);
+                    @endphp
                         <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="backend/assets/images/users/user-3.jpg" alt="user-image" class="rounded-circle">
+                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <img src="{{ (!empty($adminData->photo)) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg') }}" alt="user-image" class="rounded-circle">
                                 <span class="pro-user-name ms-1">
-                                    Aymane <i class="mdi mdi-chevron-down"></i> 
+                                <strong style="color: black;">{{$adminData->name}}</strong>
+                                <i class="mdi mdi-chevron-down"></i> 
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -33,7 +37,7 @@
                                 </div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{route('admin.profile')}}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
                                     <span>My Account</span>
                                 </a>
@@ -53,7 +57,7 @@
                                 <div class="dropdown-divider"></div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{route('admin.logout')}}" class="dropdown-item notify-item">
                                     <i class="fe-log-out"></i>
                                     <span>Logout</span>
                                 </a>
