@@ -36,16 +36,12 @@
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="nav-second-level">
-                    {{-- @if(Auth::user()->can('employee.all')) --}}
                     <li>
-                        {{-- <a href="{{ route('all.employee') }}">All Employee</a> --}}
+                        <a href="{{ route('all.employee') }}">All Employee</a> 
                     </li>
-              {{--  @endif--}}
-             {{-- @if(Auth::user()->can('employee.add'))--}}
                     <li>
-                        {{-- <a href="{{ route('add.employee') }}">Add Employee </a> --}}
+                     <a href="{{ route('add.employee') }}">Add Employee </a> 
                     </li>
-              {{--  @endif--}}
                         
                     </ul>
                 </div>
