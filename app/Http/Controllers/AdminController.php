@@ -11,15 +11,19 @@ use App\Rules\EmailDomain;
 
 class AdminController extends Controller
 {
-    public function Admindestroy(Request $request): RedirectResponse
+    public function AdminDestroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+        $notification = array(
+            'message' => 'Logout Done Successfully',
+            'alert-type' => 'info'
+        );
 
-        return redirect('/logout');
+        return redirect('/logout')->with($notification);
     }
     public function AdminLogoutPage()
     {
@@ -51,7 +55,7 @@ class AdminController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Admin Profile Updated Successfully',
+            'message' => 'Profile Updated Successfully',
             'alert-type' => 'success'
         );
 

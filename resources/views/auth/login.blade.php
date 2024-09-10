@@ -69,43 +69,45 @@
                         </div>
                         <br>
                         <form method="POST" action="{{ route('login') }}">
-                            @csrf
+        @csrf
 
-                            <div class="mb-3">
-                                <label for="login" class="form-label">Email</label>
-                                <input class="form-control @error('login') is-invalid @enderror"  name="email" type="text" id="login" required placeholder="Enter your email">
-                                @error('login')
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control @error('email') is-invalid @enderror" name="email" type="email" id="email" required placeholder="Enter your email">
+                            @error('email')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="password" name="password"  class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password">
+                                @error('password')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" id="password" name="password" class="form-control @error('login') is-invalid @enderror" placeholder="Enter your password">
-                                    <div class="input-group-text" data-password="false">
-                                        <span class="password-eye"></span>
-                                    </div>
-                                </div>
-                                @error('login')
-                                <span class="text-danger">{{$message}}</span>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                    <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                <div class="input-group-text" data-password="false">
+                                    <span class="password-eye"></span>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="text-center d-grid">
-                                <button class="btn btn-primary" type="submit">Log In</button>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="checkbox-signin" name="remember" checked>
+                                <label class="form-check-label" for="checkbox-signin">Remember me</label>
                             </div>
-                            <div class="text-center mt-3">
-                                <p class="text-black-50"><strong>Don't have an account? <a href="{{ route('register') }}" class="text-black" style="font-weight: bold;"><b>Register</b></a></strong></p>
-                            </div>
-                        </form>
+                        </div>
+
+                        <div class="text-center d-grid">
+                            <button class="btn btn-primary" type="submit">Log In</button>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <p class="text-black-50"><strong>Don't have an account? <a href="{{ route('register') }}" class="text-black" style="font-weight: bold;"><b>Register</b></a></strong></p>
+                        </div>
+                    </form>
+
                     </div>
                     <!-- end card-body -->
                 </div>
