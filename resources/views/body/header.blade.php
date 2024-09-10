@@ -33,7 +33,7 @@
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                    <h6 class="text-overflow m-0">Welcome {{$adminData->name}} !</h6>
                                 </div>
     
                                 <!-- item-->
@@ -43,16 +43,12 @@
                                 </a>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-settings"></i>
-                                    <span>Settings</span>
+                                <a href="{{route('change.password')}}" class="dropdown-item notify-item">
+                                    <i class="fe-lock"></i>
+                                    <span>Change Password</span>
                                 </a>
     
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-lock"></i>
-                                    <span>Lock Screen</span>
-                                </a>
+                              
     
                                 <div class="dropdown-divider"></div>
     
