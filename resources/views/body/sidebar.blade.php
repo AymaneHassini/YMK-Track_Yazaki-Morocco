@@ -87,10 +87,10 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('all.supplier')}}">All Supplier</a> --}}
+                           <a href="{{route('all.supplier')}}">All Supplier</a> 
                         </li>
                         <li>
-                            {{-- <a href="{{route('add.supplier')}}">Add Supplier</a> --}}
+                             <a href="{{route('add.supplier')}}">Add Supplier</a> 
                         </li>
                       
                     </ul>
