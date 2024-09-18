@@ -61,12 +61,12 @@
                     <ul class="nav-second-level">
                         {{-- @if(Auth::user()->can('customer.all')) --}}
                         <li>
-                            {{-- <a href="{{ route('all.customer') }}">All Customer</a> --}}
+                            <a href="{{ route('all.customer') }}">All Customer</a>
                         </li>
               {{--  @endif--}}
                         {{-- @if(Auth::user()->can('customer.add')) --}}
                         <li>
-                            {{-- <a href="{{ route('add.customer') }}">Add Customer</a> --}}
+                           <a href="{{ route('add.customer') }}">Add Customer</a> 
                         </li>
 
               {{--  @endif--}}
