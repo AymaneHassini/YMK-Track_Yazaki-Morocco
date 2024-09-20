@@ -45,7 +45,7 @@
         	@foreach($customer as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->image) }}" style="width:50px; height: 40px;"> </td>
+                <td> <img src="{{ asset($item->image) }}" style="width:50px; "> </td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->phone }}</td>

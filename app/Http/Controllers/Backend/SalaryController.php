@@ -54,7 +54,7 @@ class SalaryController extends Controller
         } else {
 
             $notification = array(
-            'message' => 'Advance Salary Already Paid',
+            'message' => 'Advance Already Paid',
             'alert-type' => 'warning'
         );
 
@@ -107,6 +107,59 @@ class SalaryController extends Controller
 
     }// End Method
 
-   
+    //////////////////////// Pay Salary All Methods /////////////////
+
+
+    public function PaySalary()
+    {
+
+        $employee = Employee::latest()->get();
+        return view('backend.salary.pay_salary', compact('employee'));
+    }// End Method
+
+
+    public function PayNowSalary($id)
+    {
+
+        $paysalary = Employee::findOrFail($id);
+        return view('backend.salary.paid_salary', compact('paysalary'));
+
+    }// End Method
+
+
+    public function EmployeSalaryStore(Request $request)
+    {
+        
+        $employee_id = $request->id;
+
+        PaySalary::insert([
+
+            'employee_id' => $employee_id,
+            'salary_month' => $request->month,
+            'paid_amount' => $request->paid_amount,
+            'advance_salary' => $request->advance_salary,
+            'due_salary' => $request->due_salary,
+            'created_at' => Carbon::now(),
+
+        ]);
+
+        $notification = array(
+             'message' => 'Employee Salary Paid Successfully',
+             'alert-type' => 'success'
+         );
+
+        return redirect()->route('pay.salary')->with($notification);
+
+
+    }// End Method
+
+
+    public function MonthSalary()
+    {
+
+        $paidsalary = PaySalary::latest()->get();
+        return view('backend.salary.month_salary', compact('paidsalary'));
+
+    }// End Method
 
 }

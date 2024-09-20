@@ -38,7 +38,7 @@
         	@foreach($salary as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->employee->image) }}" style="width:50px; height: 40px;"> </td>
+                <td> <img src="{{ asset($item->employee->image) }}" style="width:50px;"> </td>
                 <td>{{ $item['employee']['name'] }}</td>
                 <td>{{ $item->month }}</td>
                 <td>{{ $item['employee']['salary'] }}</td>
@@ -52,9 +52,8 @@
 
                   </td>
                 <td>
-<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
-
+<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>  
+<a href="{{ route('delete.employee',$item->id) }}"  class="btn btn-danger rounded-pill waves-effect waves-light" id="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>  
                 </td>
             </tr>
             @endforeach

@@ -12,12 +12,13 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('advance_salaries', function (Blueprint $table) {
+        Schema::create('pay_salaries', function (Blueprint $table) {
             $table->id();
             $table->integer('employee_id');
-            $table->string('month')->nullable();
-            $table->string('year')->nullable();
+            $table->string('salary_month')->nullable();
+            $table->string('paid_amount')->nullable();
             $table->string('advance_salary')->nullable();
+            $table->string('due_salary')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('advance_salaries');
+        Schema::dropIfExists('pay_salaries');
     }
 };

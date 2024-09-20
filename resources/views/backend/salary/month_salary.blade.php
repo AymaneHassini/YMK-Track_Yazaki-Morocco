@@ -12,10 +12,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.supplier') }}" class="btn btn-primary rounded-pill waves-effect waves-light" style="background-color: #e60012; border-color: #e60012; color: white;">Add Supplier </a>  
-                                        </ol>
+                                        <a href="{{ route('add.advance.salary') }}" class="btn btn-primary rounded-pill waves-effect waves-light" style="background-color: #e60012; border-color: #e60012; color: white;">
+    <i class="mdi mdi-account-circle me-1"></i> Add Advance Salary
+</a>                                        </ol>
                                     </div>
-                                    <h4 class="page-title">All Supplier</h4>
+                                    <h4 class="page-title">Last Month Salary</h4>
                                 </div>
                             </div>
                         </div>     
@@ -33,26 +34,24 @@
                                 <th>Sl</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Type</th>
+                                <th>Month</th>
+                                <th>Salary</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-
+                    
         <tbody>
-        	@foreach($supplier as $key=> $item)
+        	@foreach($paidsalary as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->image) }}" style="width:50px; "> </td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->email }}</td>
-                <td>{{ $item->phone }}</td>
-                <td>{{ $item->type }}</td>
+                <td> <img src="{{ asset($item->employee->image) }}" style="width:50px; height: 40px;"> </td>
+                <td>{{ $item['employee']['name'] }}</td>
+                <td>{{ $item->salary_month }}</td>
+                <td>{{ $item['employee']['salary'] }}</td>
+                <td><span class="badge" style="background-color: #28a745; color: white; font-size: 1em; padding: 0.5em 1em; border-radius: 0.25em; font-weight: bold; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">Fully Paid</span></td>
                 <td>
-<a href="{{ route('edit.supplier',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>  
-<a href="{{ route('delete.supplier',$item->id) }}"  class="btn btn-danger rounded-pill waves-effect waves-light" id="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>  
-<a href="{{ route('details.supplier',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light" title="Details"><i class="fa fa-eye" aria-hidden="true"></i></a>
+<a href="{{ route('pay.now.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">   <i class="fa fa-history" aria-hidden="true"></i> </a> 
 
                 </td>
             </tr>
