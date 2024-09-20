@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\Backend\SalaryController;
+use App\Http\Controllers\Backend\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,5 +88,14 @@ Route::controller(SalaryController::class)->group(function () {
     Route::get('/pay/now/salary/{id}', 'PayNowSalary')->name('pay.now.salary');
     Route::post('/employe/salary/store', 'EmployeSalaryStore')->name('employe.salary.store');
     Route::get('/month/salary', 'MonthSalary')->name('month.salary');
+});
+Route::controller(AttendanceController::class)->group(function () {
+
+    Route::get('/employee/attend/list', 'EmployeeAttendanceList')->name('employee.attend.list');
+    Route::get('/add/employee/attend', 'AddEmployeeAttendance')->name('add.employee.attend');
+    Route::post('/employee/attend/store', 'EmployeeAttendanceStore')->name('employee.attend.store');
+    
+    Route::get('/edit/employee/attend/{date}', 'EditEmployeeAttendance')->name('employee.attend.edit');
+    Route::get('/view/employee/attend/{date}', 'ViewEmployeeAttendance')->name('employee.attend.view');
 });
 require __DIR__.'/auth.php';

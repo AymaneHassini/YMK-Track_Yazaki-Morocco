@@ -137,7 +137,7 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('employee.attend.list')}}">Employee Attendance List</a> --}}
+                             <a href="{{route('employee.attend.list')}}">Employee Attendance List</a> 
                         </li>              
                     </ul>
                 </div>
