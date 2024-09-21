@@ -173,8 +173,8 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('all.product')}}">All Products</a>
-                            <a href="{{route('add.product')}}">Add Products</a> --}}
+                             <a href="{{route('all.product')}}">All Products</a>
+                            <a href="{{route('add.product')}}">Add Products</a> 
 
                         </li>   
                         <li>
