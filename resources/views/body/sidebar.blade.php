@@ -178,7 +178,7 @@
 
                         </li>   
                         <li>
-                            {{-- <a href="{{route('import.product')}}">Import Products</a> --}}
+                             <a href="{{route('import.product')}}">Import Products</a> 
 
                         </li>            
                     </ul>

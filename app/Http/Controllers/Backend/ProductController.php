@@ -173,4 +173,28 @@ class ProductController extends Controller
         return view('backend.product.barcode_product', compact('product'));
 
     }// End Method
+    public function ImportProduct()
+    {
+
+        return view('backend.product.import_product');
+
+    }
+    public function Export()
+    {
+
+        return Excel::download(new ProductExport, 'products.xlsx');
+
+    }
+    public function Import(Request $request)
+    {
+
+        Excel::import(new ProductImport, $request->file('import_file'));
+
+        $notification = array(
+           'message' => 'Product Imported Successfully',
+           'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }
