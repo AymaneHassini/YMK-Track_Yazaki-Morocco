@@ -155,7 +155,7 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('all.category')}}">All Category</a> --}}
+                             <a href="{{route('all.category')}}">All Category</a> 
                         </li>              
                     </ul>
                 </div>
