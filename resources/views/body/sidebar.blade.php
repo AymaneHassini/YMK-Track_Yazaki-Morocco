@@ -8,21 +8,19 @@
         <ul id="side-menu">
 
         <li class="menu-title">Navigation Menu</li>
-<li>
-    <a href="{{ route('dashboard') }}">
-        <i class="mdi mdi-view-dashboard-outline"></i>
-        <span> Dashboards </span>
-    </a>
-</li>
-<li>
-    {{-- <a href="{{ route('pos') }}"> --}}
-    <a href="#">
-        <i class="fa-solid fa-cash-register"></i>
-        <span> Point Of Sale (POS) </span>
-    </a>
-    {{-- </a> --}}
-</li>
+                            <li>
+                                <a href={{route('dashboard')}}>
+                                    <i class="mdi mdi-view-dashboard-outline"></i>
 
+                                    <span> Dashboards </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href={{route('pos')}}>
+                                <i class="fa-solid fa-cash-register"></i>
+                                <span> Point Of Sale (POS) </span>
+                                </a>
+                            </li>
 
             <li class="menu-title mt-2">App Features</li>
             {{-- @if(Auth::user()->can('employee.menu')) --}}

@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\PosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,6 +125,18 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/export', 'Export')->name('export');
     Route::post('/import', 'Import')->name('import');
     
+
+});
+Route::controller(PosController::class)->group(function () {
+
+    Route::get('/pos', 'Pos')->name('pos');
+    Route::post('/add-cart', 'AddCart');
+    Route::get('/allitem', 'AllItem');
+    Route::post('/cart-update/{rowId}', 'CartUpdate');
+    Route::get('/cart-remove/{rowId}', 'CartRemove');
+   
+    Route::post('/create-invoice', 'CreateInvoice');
+   
 
 });
 require __DIR__.'/auth.php';
