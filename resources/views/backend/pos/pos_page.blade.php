@@ -47,6 +47,7 @@
 $allcart = Cart::content();
 @endphp
 <tbody>
+<tbody>
     @foreach($allcart as $cart)
     <tr>
         <td style="color: black;"><strong>{{ $cart->name }}</strong></td>
@@ -54,10 +55,10 @@ $allcart = Cart::content();
             <form method="post" action="{{ url('/cart-update/'.$cart->rowId) }}">
                 @csrf
                 <input type="number" name="qty" value="{{ $cart->qty }}" style="width:40px;" min="1">
+                <input type="hidden" name="product_store" value="{{ $cart->options->product_store }}"> <!-- Available stock -->
                 <button type="submit" class="btn btn-sm" style="margin-top:-2px; background-color: black; color: white;"> 
-  <i class="fas fa-check"></i> 
-</button>
-
+                    <i class="fas fa-check"></i> 
+                </button>
             </form> 
         </td>
         <td style="font-weight: bold; color: black;">{{ $cart->price }}</td>
@@ -65,6 +66,8 @@ $allcart = Cart::content();
         <td> <a href="{{ url('/cart-remove/'.$cart->rowId) }}"><i class="fas fa-trash-alt" style="color:black"></i></a> </td>
     </tr>
     @endforeach
+</tbody>
+
 </tbody>
 </table>
 </div>
@@ -124,27 +127,28 @@ $allcart = Cart::content();
                                  <th> </th> 
                             </tr>
                         </thead>
-        <tbody>
-            @foreach($product as $key=> $item)
-            <tr>
+                        <tbody>
+    @foreach($product as $key => $item)
+        @if($item->product_store > 0)
+        <tr>
+            <form method="post" action="{{ url('/add-cart') }}">
+                @csrf
 
-    <form method="post" action="{{ url('/add-cart') }}">
-        @csrf
-
-        <input type="hidden" name="id" value="{{ $item->id }}">
-        <input type="hidden" name="name" value="{{ $item->product_name }}">
-        <input type="hidden" name="qty" value="1">
-        <input type="hidden" name="price" value="{{ $item->selling_price }}">
+                <input type="hidden" name="id" value="{{ $item->id }}">
+                <input type="hidden" name="name" value="{{ $item->product_name }}">
+                <input type="hidden" name="qty" value="1">
+                <input type="hidden" name="price" value="{{ $item->selling_price }}">
 
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"> </td>
+                <td><img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"></td>
                 <td>{{ $item->product_name }}</td>
-                <td><button type="submit" style="font-size: 20px; color: #000;" > <i class="fas fa-plus-square"></i> </button> </td> 
-           
-  </form>
-            </tr>
-            @endforeach
-        </tbody>
+                <td><button type="submit" style="font-size: 20px; color: #000;"><i class="fas fa-plus-square"></i></button></td> 
+            </form>
+        </tr>
+        @endif
+    @endforeach
+</tbody>
+
                     </table>
 
     </div>
@@ -193,5 +197,42 @@ $allcart = Cart::content();
     });
     
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#myForm').on('submit', function(e) {
+            var isValid = true; // To track if everything is valid
+
+            // Loop through each row of the cart table
+            $('tbody tr').each(function() {
+                var qty = $(this).find('input[name="qty"]').val(); // Get quantity from the form
+                var productStore = $(this).find('input[name="product_store"]').val(); // Get available stock
+
+                // Compare ordered quantity with available stock
+                if (parseInt(qty) > parseInt(productStore)) {
+                    isValid = false; 
+                    toastr.error('Quantity for ' + $(this).find('strong').text() + ' exceeds available stock!');
+                    e.preventDefault(); // Prevent form submission
+                    return false; // Stop the loop if validation fails
+                }
+            });
+
+            if (isValid) {
+                this.submit(); // If everything is valid, submit the form
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+    });
+</script>
+
+
 
 @endsection

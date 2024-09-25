@@ -82,16 +82,23 @@ class PosController extends Controller
 
     } // End Method
 
-
     public function CreateInvoice(Request $request)
     {
-
-        $contents = Cart::content();
-        $cust_id = $request->customer_id;
-        $customer = Customer::where('id', $cust_id)->first();
+        $contents = Cart::content(); // Retrieve all cart contents
+        $cust_id = $request->customer_id; // Get the customer ID from the request
+        $customer = Customer::where('id', $cust_id)->first(); // Find the customer
+    
+        // Loop through each cart item and check if the quantity exceeds the stock
+        foreach ($contents as $cartItem) {
+            $product = Product::find($cartItem->id); // Fetch the product by its ID
+    
+            // If the cart quantity exceeds the available stock, return an error message
+            if ($cartItem->qty > $product->product_store) {
+                return back()->withErrors(['error' => 'The quantity for ' . $cartItem->name . ' exceeds the available stock of ' . $product->product_store . '.']);
+            }
+        }
+    
+        // If all quantities are valid, proceed to the invoice view
         return view('backend.invoice.product_invoice', compact('contents', 'customer'));
-
-    } // End Method
-
-
+    }
 }

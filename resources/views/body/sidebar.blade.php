@@ -195,16 +195,16 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('pending.order')}}">Pending Orders</a> --}}
+                             <a href="{{route('pending.order')}}">Pending Orders</a> 
                             </li>   
                             <li>
 
-                            {{-- <a href="{{route('complete.order')}}">Complete Orders</a> --}}
+                             <a href="{{route('complete.order')}}">Completed Orders</a> 
 
                         </li>   
                         <li>
 
-                            {{-- <a href="{{route('pending.order')}}">Pending Due</a> --}}
+                             <a href="{{route('pending.order')}}">Pending Due</a> 
 
                         </li>   
                    
@@ -223,7 +223,7 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('stock.manage')}}">Pending Orders</a> --}}
+                             <a href="{{route('stock.manage')}}">Pending Orders</a> 
 
                         </li>   
                    

@@ -173,7 +173,7 @@
     <select name="payment_status" class="form-select" id="example-select">
         <option selected disabled >Select Payment Type </option>
         <option value="HandCash">Cash</option>
-       <!-- <option value="Cheque">Cheque</option> -->
+        <option value="Cheque">Cheque</option> 
         <option value="Due">Due</option>
                    
                 </select>
