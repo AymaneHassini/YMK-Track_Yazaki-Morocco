@@ -241,20 +241,20 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('all.permission')}}">All Permissions</a> --}}
+                             <a href="{{route('all.permission')}}">All Permissions</a> 
 
                         </li>   
                          
                         <li>
-                            {{-- <a href="{{route('all.roles')}}">All Roles</a> --}}
+                             <a href="{{route('all.roles')}}">All Roles</a> 
 
                         </li>   
                         <li>
-                            {{-- <a href="{{route('add.roles.permission')}}">Roles in Permissions</a> --}}
+                             <a href="{{route('add.roles.permission')}}">Roles in Permissions</a> 
 
                         </li>   
                         <li>
-                            {{-- <a href="{{route('all.roles.permission')}}">All Roles Permissions</a> --}}
+                             <a href="{{route('all.roles.permission')}}">All Roles Permissions</a> 
 
                         </li>   
                    
@@ -272,12 +272,12 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                            {{-- <a href="{{route('all.admin')}}">All Admin</a> --}}
+                             <a href="{{route('all.admin')}}">All Admin</a> 
 
                         </li>   
                          
                         <li>
-                            {{-- <a href="{{route('add.admin')}}">Add Admin</a> --}}
+                             <a href="{{route('add.admin')}}">Add Admin</a> 
 
                         </li>   
          
