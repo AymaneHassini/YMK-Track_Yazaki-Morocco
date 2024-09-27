@@ -49,68 +49,99 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::controller(EmployeeController::class)->group(function () {
-    Route::get('/all/employee', 'AllEmployee')->name('all.employee');
-    Route::get('/add/employee', 'AddEmployee')->name('add.employee');
-    Route::post('/store/employee', 'StoreEmployee')->name('employee.store');
-    Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee');
-    Route::post('/update/employee', 'UpdateEmployee')->name('employee.update');
-    Route::get('/delete/employee/{id}', 'DeleteEmployee')->name('delete.employee');
-
+    Route::get('/all/employee', 'AllEmployee')->name('all.employee')->middleware('permission:employee.all');
+    Route::get('/add/employee', 'AddEmployee')->name('add.employee')->middleware('permission:employee.add');
+    Route::post('/store/employee', 'StoreEmployee')->name('employee.store')->middleware('permission:employee.add');
+    Route::get('/edit/employee/{id}', 'EditEmployee')->name('edit.employee')->middleware('permission:employee.edit');
+    Route::post('/update/employee', 'UpdateEmployee')->name('employee.update')->middleware('permission:employee.edit');
+    Route::get('/delete/employee/{id}', 'DeleteEmployee')->name('delete.employee')->middleware('permission:employee.delete');
 });
-Route::controller(CustomerController::class)->group(function () {
 
-    Route::get('/all/customer', 'AllCustomer')->name('all.customer');
-    Route::get('/add/customer', 'AddCustomer')->name('add.customer');
-    Route::post('/store/customer', 'StoreCustomer')->name('customer.store');
-    Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
-    Route::post('/update/customer', 'UpdateCustomer')->name('customer.update');
-    Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('/all/customer', 'AllCustomer')->name('all.customer')->middleware('permission:customer.all');
+    Route::get('/add/customer', 'AddCustomer')->name('add.customer')->middleware('permission:customer.add');
+    Route::post('/store/customer', 'StoreCustomer')->name('customer.store')->middleware('permission:customer.add');
+    Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer')->middleware('permission:customer.edit');
+    Route::post('/update/customer', 'UpdateCustomer')->name('customer.update')->middleware('permission:customer.edit');
+    Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer')->middleware('permission:customer.delete');
 });
 Route::controller(SupplierController::class)->group(function () {
-
-    Route::get('/all/supplier', 'AllSupplier')->name('all.supplier');
-    Route::get('/add/supplier', 'AddSupplier')->name('add.supplier');
-    Route::post('/store/supplier', 'StoreSupplier')->name('supplier.store');
-    Route::get('/edit/supplier/{id}', 'EditSupplier')->name('edit.supplier');
-    Route::post('/update/supplier', 'UpdateSupplier')->name('supplier.update');
-    Route::get('/delete/supplier/{id}', 'DeleteSupplier')->name('delete.supplier');
-    Route::get('/details/supplier/{id}', 'DetailsSupplier')->name('details.supplier');
+    Route::get('/all/supplier', 'AllSupplier')->name('all.supplier')->middleware('permission:supplier.all');
+    Route::get('/add/supplier', 'AddSupplier')->name('add.supplier')->middleware('permission:supplier.add');
+    Route::post('/store/supplier', 'StoreSupplier')->name('supplier.store')->middleware('permission:supplier.add');
+    Route::get('/edit/supplier/{id}', 'EditSupplier')->name('edit.supplier')->middleware('permission:supplier.edit');
+    Route::post('/update/supplier', 'UpdateSupplier')->name('supplier.update')->middleware('permission:supplier.edit');
+    Route::get('/delete/supplier/{id}', 'DeleteSupplier')->name('delete.supplier')->middleware('permission:supplier.delete');
 });
+// Salary Management Routes - Advance Salary
 Route::controller(SalaryController::class)->group(function () {
 
-    Route::get('/add/advance/salary', 'AddAdvanceSalary')->name('add.advance.salary');
-    Route::post('/advance/salary/store', 'AdvanceSalaryStore')->name('advance.salary.store');
-    Route::get('/all/advance/salary', 'AllAdvanceSalary')->name('all.advance.salary');
+    Route::get('/add/advance/salary', 'AddAdvanceSalary')
+        ->name('add.advance.salary')
+        ->middleware('permission:salary.add');
+
+    Route::post('/advance/salary/store', 'AdvanceSalaryStore')
+        ->name('advance.salary.store')
+        ->middleware('permission:salary.add');
+
+    Route::get('/all/advance/salary', 'AllAdvanceSalary')
+        ->name('all.advance.salary')
+        ->middleware('permission:salary.all');
      
-    Route::get('/edit/advance/salary/{id}', 'EditAdvanceSalary')->name('edit.advance.salary');
-    Route::post('/advance/salary/update', 'AdvanceSalaryUpdate')->name('advance.salary.update');
-    Route::get('/delete/advance/salary/{id}', 'DeleteAdvanceSalary')->name('delete.advance.salary');
+    Route::get('/edit/advance/salary/{id}', 'EditAdvanceSalary')
+        ->name('edit.advance.salary')
+        ->middleware('permission:salary.edit');
 
+    Route::post('/advance/salary/update', 'AdvanceSalaryUpdate')
+        ->name('advance.salary.update')
+        ->middleware('permission:salary.edit');
+
+    Route::get('/delete/advance/salary/{id}', 'DeleteAdvanceSalary')
+        ->name('delete.advance.salary')
+        ->middleware('permission:salary.delete');
 });
+
+// Salary Payment Routes
 Route::controller(SalaryController::class)->group(function () {
 
-    Route::get('/pay/salary', 'PaySalary')->name('pay.salary');
-    Route::get('/pay/now/salary/{id}', 'PayNowSalary')->name('pay.now.salary');
-    Route::post('/employe/salary/store', 'EmployeSalaryStore')->name('employe.salary.store');
-    Route::get('/month/salary', 'MonthSalary')->name('month.salary');
-});
-Route::controller(AttendanceController::class)->group(function () {
+    Route::get('/pay/salary', 'PaySalary')
+        ->name('pay.salary')
+        ->middleware('permission:salary.pay');
 
-    Route::get('/employee/attend/list', 'EmployeeAttendanceList')->name('employee.attend.list');
-    Route::get('/add/employee/attend', 'AddEmployeeAttendance')->name('add.employee.attend');
-    Route::post('/employee/attend/store', 'EmployeeAttendanceStore')->name('employee.attend.store');
+    Route::get('/pay/now/salary/{id}', 'PayNowSalary')
+        ->name('pay.now.salary')
+        ->middleware('permission:salary.pay');
+
+    Route::post('/employe/salary/store', 'EmployeSalaryStore')
+        ->name('employe.salary.store')
+        ->middleware('permission:salary.pay');
+
+    Route::get('/month/salary', 'MonthSalary')
+        ->name('month.salary')
+        ->middleware('permission:salary.paid');
+});
+
+Route::controller(AttendanceController::class)->group(function () {
+    Route::middleware('permission:attendance.menu')->group(function () {
+
+        Route::get('/employee/attend/list', 'EmployeeAttendanceList')->name('employee.attend.list');
+        Route::get('/add/employee/attend', 'AddEmployeeAttendance')->name('add.employee.attend');
+        Route::post('/employee/attend/store', 'EmployeeAttendanceStore')->name('employee.attend.store');
     
-    Route::get('/edit/employee/attend/{date}', 'EditEmployeeAttendance')->name('employee.attend.edit');
-    Route::get('/view/employee/attend/{date}', 'ViewEmployeeAttendance')->name('employee.attend.view');
+        Route::get('/edit/employee/attend/{date}', 'EditEmployeeAttendance')->name('employee.attend.edit');
+        Route::get('/view/employee/attend/{date}', 'ViewEmployeeAttendance')->name('employee.attend.view');
+    });
+
 });
 Route::controller(CategoryController::class)->group(function () {
+    Route::middleware('permission:category.menu')->group(function () {
 
-    Route::get('/all/category', 'AllCategory')->name('all.category');
-    Route::post('/store/category', 'StoreCategory')->name('category.store');
-    Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
-    Route::post('/update/category', 'UpdateCategory')->name('category.update');
-    Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
-
+        Route::get('/all/category', 'AllCategory')->name('all.category');
+        Route::post('/store/category', 'StoreCategory')->name('category.store');
+        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
+        Route::post('/update/category', 'UpdateCategory')->name('category.update');
+        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    });
 });
 Route::controller(ProductController::class)->group(function () {
 
@@ -126,7 +157,6 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/import/product', 'ImportProduct')->name('import.product');
     Route::get('/export', 'Export')->name('export');
     Route::post('/import', 'Import')->name('import');
-    
 
 });
 Route::controller(PosController::class)->group(function () {
@@ -138,7 +168,8 @@ Route::controller(PosController::class)->group(function () {
     Route::get('/cart-remove/{rowId}', 'CartRemove');
    
     Route::post('/create-invoice', 'CreateInvoice');
-   
+    
+
 
 });
 Route::controller(OrderController::class)->group(function () {
