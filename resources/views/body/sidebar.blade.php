@@ -315,7 +315,7 @@
             <div class="collapse" id="backup">
 <ul class="nav-second-level">
 <li>
-{{-- <a href="{{ route('database.backup') }}">Database Backup </a> --}}
+ <a href="{{ route('database.backup') }}">Database Backup </a> 
 </li> 
 
 </ul>
