@@ -71,14 +71,9 @@
     </div>
     <!-- end row-->
 
-
-                      
-                        
                     </div> <!-- container -->
 
                 </div> <!-- content -->
-
-
 
                  <!-- Signup modal content -->
 <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -133,9 +128,5 @@
                 }
             })
         }
-
-
 </script>
-
-
 @endsection 

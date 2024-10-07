@@ -222,7 +222,7 @@
                         </li>   
                         <li>
 
-                             <a href="{{route('pending.order')}}">Pending Due</a> 
+                             <a href="{{route('pending.due')}}">Pending Due</a> 
 
                         </li>   
                    
@@ -240,7 +240,7 @@
                     <ul class="nav-second-level">
                        
                         <li>
-                             <a href="{{route('stock.manage')}}">Pending Orders</a> 
+                             <a href="{{route('stock.manage')}}">Stock</a> 
 
                         </li>   
                    
@@ -305,22 +305,22 @@
             </li>
             
             <li class="menu-title mt-2">Data Backup</li>
-<li>
-<a href="#backup" data-bs-toggle="collapse">
-<i class="fas fa-database"></i>
-<span>Database Backup</span>
-<span class="menu-arrow"></span>
-</a>
+            <li>
+            <a href="#backup" data-bs-toggle="collapse">
+            <i class="fas fa-database"></i>
+            <span>Database Backup</span>
+            <span class="menu-arrow"></span>
+            </a>
 
-            <div class="collapse" id="backup">
-<ul class="nav-second-level">
-<li>
- <a href="{{ route('database.backup') }}">Database Backup </a> 
-</li> 
+                        <div class="collapse" id="backup">
+            <ul class="nav-second-level">
+            <li>
+            <a href="{{ route('database.backup') }}">Database Backup </a> 
+            </li> 
 
-</ul>
-</div>
-</li>
+            </ul>
+            </div>
+            </li>
 
         </ul>
 

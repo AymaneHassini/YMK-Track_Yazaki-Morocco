@@ -35,7 +35,7 @@ class OrderController extends Controller
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
-        $data['due'] = $request->$mtotal;
+        $data['due'] = $mtotal;
         $data['created_at'] = Carbon::now();
 
         $order_id = Order::insertGetId($data);

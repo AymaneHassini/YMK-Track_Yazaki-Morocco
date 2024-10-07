@@ -28,7 +28,6 @@ use App\Http\Controllers\Backend\RoleController;
 Route::get('/', function () {
     return view('auth/login');
 });
-
 Route::get('/dashboard', function () {
     return view('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -71,6 +70,7 @@ Route::controller(SupplierController::class)->group(function () {
     Route::post('/store/supplier', 'StoreSupplier')->name('supplier.store')->middleware('permission:supplier.add');
     Route::get('/edit/supplier/{id}', 'EditSupplier')->name('edit.supplier')->middleware('permission:supplier.edit');
     Route::post('/update/supplier', 'UpdateSupplier')->name('supplier.update')->middleware('permission:supplier.edit');
+    Route::get('/details/supplier/{id}', 'DetailsSupplier')->name('details.supplier')->middleware('permission:supplier.all'); // Add this line
     Route::get('/delete/supplier/{id}', 'DeleteSupplier')->name('delete.supplier')->middleware('permission:supplier.delete');
 });
 // Salary Management Routes - Advance Salary
@@ -235,7 +235,9 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
     Route::get('/database/backup', 'DatabaseBackup')->name('database.backup');
     Route::get('/backup/now', 'BackupNow');
-    Route::get('{getFilename}', 'DownloadDatabase');
+    Route::get('/{getFilename}', [AdminController::class, 'DownloadDatabase'])
+    ->where('getFilename', '^(?!login|register|dashboard|profile|admin|.*password).*$');
+
     Route::get('/delete/database/{getFilename}', 'DeleteDatabase');
   
 
