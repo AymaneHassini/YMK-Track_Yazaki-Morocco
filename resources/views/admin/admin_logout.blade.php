@@ -75,7 +75,7 @@
 
                                     <h3>See you again !</h3>
 
-                                    <p class="text-muted"> You have signed out successfully. </p>
+                                    <p class="text-muted"> You are now successfully signed out. </p>
                                 </div>
 
                             </div> <!-- end card-body -->
@@ -84,7 +84,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-dark"><b><strong>Back to</strong> </b><a href="{{route('login')}}" class="text-black ms-1"><b><strong>Sign In</strong> </b></a></p>
+                                <p class="text-dark">Back to <a href="{{route('login')}}" class="text-black ms-1"><b><strong>Sign In</strong> </b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

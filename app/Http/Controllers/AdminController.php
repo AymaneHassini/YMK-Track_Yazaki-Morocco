@@ -28,7 +28,7 @@ class AdminController extends Controller
             'alert-type' => 'info'
         );
 
-        return redirect('/logout')->with($notification);
+        return redirect('/login')->with($notification);
     }
     public function AdminLogoutPage()
     {

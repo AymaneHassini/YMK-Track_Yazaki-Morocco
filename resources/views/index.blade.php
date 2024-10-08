@@ -129,205 +129,179 @@
                         <!-- end row-->
 
                         <div class="row">
-                            
+                                <div class="col-lg-4">
+                                    <div class="card bg-pattern">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="backend/assets/images/favicon.ico" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                                <h4 class="mb-1 font-20">YMK</h4>
+                                                <p class="text-muted font-14">Kenitra, Morocco</p>
+                                            </div>
 
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body pb-2">
-                                        <div class="float-end d-none d-md-inline-block">
-                                            <div class="btn-group mb-2">
-                                                <button type="button" class="btn btn-xs btn-light">Today</button>
-                                                <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                                <button type="button" class="btn btn-xs btn-secondary">Monthly</button>
+                                            <p class="font-14 text-center text-muted">
+                                                Yazaki is a global leader in the development and production of electrical distribution systems, with a major location in Kenitra, Morocco.
+                                            </p>
+
+                                            <div class="text-center">
+                                            <a href="https://www.kerix.net/fr/annuaire-entreprise/yazaki-kenitra" target="_blank" class="btn btn-sm btn-light">View more info</a>
                                             </div>
                                         </div>
-    
-                                        <h4 class="header-title mb-3">Sales Analytics</h4>
-    
-                                        <div dir="ltr">
-                                            <div id="sales-analytics" class="mt-4" data-colors="#1abc9c,#4a81d4"></div>
+                                    </div> <!-- end card -->
+                                </div><!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card bg-pattern">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="backend/assets/images/favicon.ico" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                                <h4 class="mb-1 font-20">YMM</h4>
+                                                <p class="text-muted font-14">Meknes, Morocco</p>
+                                            </div>
+
+                                            <p class="font-14 text-center text-muted">
+                                                Yazaki operates another major facility in Meknes, Morocco, specializing in automotive parts manufacturing for global brands.
+                                            </p>
+
+                                            <div class="text-center">
+                                            <a href="https://www.charika.ma/societe-yazaki-morocco-meknes-413745" target="_blank" class="btn btn-sm btn-light">View more info</a>
+                                            </div>
+
+                                          
                                         </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col-->
+                                    </div> <!-- end card -->
+                                </div><!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card bg-pattern">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="backend/assets/images/favicon.ico" alt="logo" class="avatar-xl rounded-circle mb-3">
+                                                <h4 class="mb-1 font-20">YMT</h4>
+                                                <p class="text-muted font-14">Tangier, Morocco</p>
+                                            </div>
+
+                                            <p class="font-14 text-center text-muted">
+                                                Yazaki’s Tangier facility plays a crucial role in supplying electrical components to automotive industries across Europe and beyond.
+                                            </p>
+
+                                            <div class="text-center">
+                                            <a href="https://www.kerix.net/fr/annuaire-entreprise/yazaki-tanger" target="_blank" class="btn btn-sm btn-light">View more info</a>
+                                            </div>
+
+                                           
+                                        </div>
+                                    </div> <!-- end card -->
+                                </div><!-- end col -->
                         </div>
+
                         <!-- end row -->
 
                         <div class="row">
-                         
-
-                            <div class="col-xl-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="dropdown float-end">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Edit Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            </div>
-                                        </div>
-    
-                                        <h4 class="header-title mb-3">Revenue History</h4>
-    
-                                        <div class="table-responsive">
-                                            <table class="table table-borderless table-nowrap table-hover table-centered m-0">
-    
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th>Marketplaces</th>
-                                                        <th>Date</th>
-                                                        <th>Payouts</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Themes Market</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 15, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $5848.68
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Freelance</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 12, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $1247.25
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Share Holding</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 10, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $815.89
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Envato's Affiliates</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Oct 03, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $248.75
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-danger text-danger">Overdue</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Marketing Revenue</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Sep 21, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $978.21
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                                        </td>
-        
-                                                        <td>
-                                                            Sep 15, 2018
-                                                        </td>
-        
-                                                        <td>
-                                                            $358.10
-                                                        </td>
-        
-                                                        <td>
-                                                            <span class="badge bg-soft-success text-success">Paid</span>
-                                                        </td>
-        
-                                                        <td>
-                                                            <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                                        </td>
-                                                    </tr>
-    
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end .table-responsive-->
-                                    </div>
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
+                        <div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row justify-content-between mb-2">
+                <div class="col-auto">
+                    <form>
+                        <div class="mb-2">
+                            <h4>Important Contacts</h4>
                         </div>
-                        <!-- end row -->
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-centered table-nowrap table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Plant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Aymane Hassini</a>
+                            </td>
+                            <td>Manager</td>
+                            <td>A.hassini@yazaki-europe.com</td>
+                            <td>IT</td>
+                            <td>YMK</td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Mehdi Nejjar</a>
+                            </td>
+                            <td>Manager</td>
+                            <td>Mehdi-n@yazaki-europe.com</td>
+                            <td>MGT</td>
+                            <td>YMT</td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Hiba Bouyahyaoui</a>
+                            </td>
+                            <td>Manager</td>
+                            <td>Hiba-b@yazaki-europe.com</td>
+                            <td>HR</td>
+
+                            <td>YMK</td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Mamoun Elaraki</a>
+                            </td>
+                            <td>Supervisor</td>
+                            <td>Mam-El@yazaki-europe.com</td>
+                            <td>Production</td>
+                            <td>YMM</td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Achraf Ettouati</a>
+                            </td>
+                            <td>Senior officer</td>
+                            <td>Achraf-ett@yazaki-europe.com</td>
+                            <td>Finance</td>
+
+                            <td>YMT</td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-user">
+                                <img src="backend/assets/images/favicon.ico" alt="table-user" class="me-2 rounded-circle">
+                                <a href="javascript:void(0);" class="text-body fw-semibold">Fatimazahra El Bouji</a>
+                            </td>
+                            <td>Manager</td>
+                            <td>fatima-z@yazaki-europe.com</td>
+                            <td>Quality</td>
+                            <td>YMM</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- end card-body-->
+    </div> <!-- end card-->
+</div> <!-- end col -->
+
+
+                            
                         
                     </div> <!-- container -->
 

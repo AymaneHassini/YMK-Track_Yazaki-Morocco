@@ -69,7 +69,7 @@
                         </div>
                         <br>
                         <form method="POST" action="{{ route('login') }}">
-        @csrf
+                    @csrf
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
